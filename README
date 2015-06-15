@@ -1,0 +1,43 @@
+AnimText
+--------
+
+A tool for generating old DOS prompt style text animations.
+
+This utility was originally made to generate the ending credit sequence for a student film project.
+
+## Input file format
+
+The file is structured into blocks like this:
+\This is text\ \%n\
+
+The first block is just text that is printed as it is.
+Blocks that start with '%' are command blocks. (If you need to
+start a text block with %, use %%)
+Lines starting with '#' are ignored.
+
+Supported command blocks:
+
+    PAUSE: \%p<duration><format>\		Duration is an integer.
+    					format can be 's' for seconds, 'm' for
+    					milliseconds or 'f' for frames.
+    					Example:
+    					\%p1s\   \pause for 1 second\
+    					\%p500s\ \pause for half a second\
+
+    TYPEWRITER: \%t<duration><format>\	Types out the next text block single
+    					character at a time. Accepts same
+    					duration and format arguments as PAUSE.
+    					If duration is negative, it is used as
+    					the number of characters to be printed
+    					per frame.
+    
+    CURSOR: \%C<duration><format>\		Show/hide the cursor.
+    
+    CLEARSCREEN: \%c\			Clear the screen.
+    
+    NEWLINE: \%n\				Start a new line.
+    
+    BACKSPACE: \%b\				Backspace
+
+Note. CURSOR and NEWLINE commands are ignored in console preview mode.
+
