@@ -1,0 +1,2 @@
+ffmpeg -y -framerate 24 -pattern_type glob -i 'tga/*.tga' out/seq.mp4
+ffplay -noborder out/seq.mp4

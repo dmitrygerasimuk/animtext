@@ -33,11 +33,11 @@ void init_video(int w,int h,int xoff,int yoff,int scale) {
   }
   font=load_font("font.fot");
   palette[0].r=0;
-  palette[0].g=0;
-  palette[0].b=0;
-  palette[1].r=200;
-  palette[1].g=200;
-  palette[1].b=200;
+  palette[0].g=40;
+  palette[0].b=51;
+  palette[1].r=129;
+  palette[1].g=148;
+  palette[1].b=150;
   SDL_SetPalette(screen, SDL_LOGPAL|SDL_PHYSPAL, palette, 0, 2);
   cursorX=0;
   cursorY=0;
@@ -84,14 +84,15 @@ void vid_putchar(char chr) {
     }
     cursorY+=8*font_scale;
     cursorX=0;
-    if(cursorY>=screen->h) {
+    int screenoffset=screen->h-50;
+    if(cursorY>=screenoffset) {
       SDL_Rect rect;
       rect.x=0; rect.y=8*font_scale; rect.w=screen->w; rect.h=screen->h-rect.y;
       memcpy(scroll_buffer,screen->pixels+(8*font_scale)*screen->pitch,buffer_len);
       memcpy(screen->pixels,scroll_buffer,buffer_len);
       rect.h=8*font_scale;
       rect.y=screen->h-rect.h;
-      cursorY=screen->h-rect.h;
+      cursorY=screenoffset-rect.h;
       SDL_FillRect(screen,&rect,0);
       SDL_Flip(screen);
     }

@@ -79,7 +79,7 @@ extern int drawString(SDL_Surface *surface,Font *font, unsigned char *str,int x,
       dx=0;
     } else {
       drawChar(surface,font,str[i],x+dx,y+dy,color,scale);
-      dx+=8*scale;
+      dx+=7*scale;
       if(dx>=surface->w) {
         dx=0;
 	dy+=8*scale;

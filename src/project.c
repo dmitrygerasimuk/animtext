@@ -44,6 +44,9 @@ static int set_segment(int line,char *buffer,Segment *seg) {
       case 'b':
 	seg->type=BACKSPACE;
 	break;
+      case 'q':
+    seg->type=BACKSLASH;
+    break;
       case 'c':
 	seg->type=CLEAR;
 	break;

@@ -82,7 +82,7 @@ int main(int argc,char *argv[]) {
   if(!output) {
     char bltin_output[256];
     strcpy(bltin_output,input);
-    strcat(bltin_output,"%.4d.tga");
+    strcat(bltin_output,"%.5d.tga");
     output=bltin_output;
     printf("No output file specified. Using %s.\n",output);
   }

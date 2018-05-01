@@ -1,7 +1,7 @@
 #ifndef PROJECT_H
 #define PROJECT_H
 
-typedef enum {NONE,TEXT,PAUSE,NEWLINE,BACKSPACE,CLEAR,CURSOR, MOD_TYPE} SegmentType;
+typedef enum {NONE,TEXT,PAUSE,NEWLINE,BACKSPACE,BACKSLASH,CLEAR,CURSOR, MOD_TYPE} SegmentType;
 typedef enum {MSEC,SEC,FRAME} TimeFormat;
 
 typedef struct _Segment {

@@ -41,6 +41,7 @@ static void preview_line(Line *line) {
 	}
 	break;
       case NEWLINE: putchar('\n'); break;
+      case BACKSLASH: putchar('\\');break; 
       case BACKSPACE: putchar('\b'); break;
       case CURSOR: break;
       default:
@@ -104,6 +105,7 @@ static int output_line(Line *line,char *filename) {
 	save_frames(filename,frames);
 	break;
       case NEWLINE: vid_putchar('\n'); break;
+      case BACKSLASH: vid_putchar('\\'); break;
       case BACKSPACE: vid_putchar('\b'); break;
       case CLEAR: vid_clearscreen(); break;
       case CURSOR: vid_setcursor(seg->pause,seg->pauseformat);
