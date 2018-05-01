@@ -33,11 +33,11 @@ void init_video(int w,int h,int xoff,int yoff,int scale) {
   }
   font=load_font("font.fot");
   palette[0].r=0;
-  palette[0].g=0;
-  palette[0].b=0;
-  palette[1].r=200;
-  palette[1].g=200;
-  palette[1].b=200;
+  palette[0].g=40;
+  palette[0].b=51;
+  palette[1].r=129;
+  palette[1].g=148;
+  palette[1].b=150;
   SDL_SetPalette(screen, SDL_LOGPAL|SDL_PHYSPAL, palette, 0, 2);
   cursorX=0;
   cursorY=0;
