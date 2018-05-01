@@ -1,0 +1,9 @@
+\%C5f\ \No delay !\ \%n\
+\%p500m\ \500 millisecond delay\ \%n\
+\%p1s\ \Hello There\ \%n\
+\%p2s\ \New line !\ \%n\
+\%p12f\ \Delay 12 frames\ \%n\
+\%t4f\ \This text is typed out\ \%n\
+\%t-2f\ \This pretty long text is typed out really fast !\ \%n\
+\%p2s\ \%c\
+\%p500m\ \Screen cleared !\
